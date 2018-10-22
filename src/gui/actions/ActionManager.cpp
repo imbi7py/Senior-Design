@@ -50,6 +50,10 @@ ActionManager::ActionManager(MainWindow* mainWindow) : QObject(mainWindow)
 	createCommandAction(ACTION_FILE_SAVEAS, tr("Save Program State As"), ":/gui/actions/file/file_save_as.png", tr("Save the current program state to a new file."), QKeySequence::SaveAs);
 	createCommandAction(ACTION_FILE_IMPORT, tr("Load File"), ":/gui/actions/file/file_import.png", tr("Import data from a file on this computer."), Qt::CTRL + Qt::Key_I);
 	createCommandAction(ACTION_FILE_REMOTE_IMPORT, tr("Load Remote File"), ":/gui/actions/file/file_import_remote.png", tr("Import a file from a remote location."), Qt::CTRL + Qt::SHIFT + Qt::Key_I);
+
+	//create test button
+	createCommandAction(ACTION_LIBRARY_FILE_IMPORT, tr("Load From Library"), ":/gui/actions/file/file_import_remote.png", tr("Load Structure From Library."), Qt::CTRL + Qt::SHIFT + Qt::Key_L);
+
 	createCommandAction(ACTION_FILE_EXPORT, tr("Export File"), ":/gui/actions/file/file_export.png", tr("Export data to a file."), Qt::CTRL + Qt::Key_E);
 	createCommandAction(ACTION_FILE_NEW_WINDOW, tr("New Program Window"), ":/gui/actions/file/file_new.png", tr("Opens a new OVITO window."));
 	createCommandAction(ACTION_HELP_ABOUT, tr("About Ovito"), nullptr, tr("Show information about the application."));

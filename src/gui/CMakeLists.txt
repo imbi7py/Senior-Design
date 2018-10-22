@@ -1,5 +1,5 @@
 ###############################################################################
-# 
+#
 #  Copyright (2016) Alexander Stukowski
 #
 #  This file is part of OVITO (Open Visualization Tool).
@@ -19,7 +19,7 @@
 #
 ###############################################################################
 
-SET(SourceFiles 
+SET(SourceFiles
 	mainwin/MainWindow.cpp
 	mainwin/ViewportsPanel.cpp
 	mainwin/TaskDisplayWidget.cpp
@@ -45,12 +45,25 @@ SET(SourceFiles
 	dialogs/LoadImageFileDialog.cpp
 	dialogs/RemoteAuthenticationDialog.cpp
 	dialogs/FileExporterSettingsDialog.cpp
+	actions/A1B2.cpp
+ 	actions/BCC.cpp
+	actions/CaB6.cpp
+	actions/Cu3Au.cpp
+	actions/Diamond.cpp
+	actions/NaCl.cpp
+	actions/FCC.cpp
+	actions/SC.cpp
+	actions/ZincBlende.cpp
 	actions/ActionManager.cpp
 	actions/FileActions.cpp
 	actions/ViewportActions.cpp
 	actions/AnimationActions.cpp
 	actions/RenderActions.cpp
 	actions/ViewportModeAction.cpp
+	actions/MgCu2.cpp
+	actions/MgSnCu4.cpp
+	actions/CsCl.cpp
+	actions/Cut.cpp
 	dataset/GuiDataSetContainer.cpp
 	dataset/io/FileSourceEditor.cpp
 	dataset/io/FileImporterEditor.cpp
@@ -153,7 +166,7 @@ IF(APPLE)
 ELSEIF(UNIX)
     SET_TARGET_PROPERTIES(Gui PROPERTIES INSTALL_RPATH "$ORIGIN")
 ENDIF()
-    
+
 # This library is part of the installation package.
 INSTALL(TARGETS Gui EXPORT OVITO
 	RUNTIME DESTINATION "${OVITO_RELATIVE_LIBRARY_DIRECTORY}" COMPONENT "runtime"

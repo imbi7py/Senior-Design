@@ -49,6 +49,7 @@ LoadStream::LoadStream(QDataStream& source) : _is(source), _isOpen(false)
 	
 	_isOpen = false;
 
+
 	if(magic1 != 0x0FACC5AB || magic2 != 0x0AFCCA5A)
 		throw Exception(tr("Unknown file format. This is not a valid state file written by %1.").arg(QCoreApplication::applicationName()));
 

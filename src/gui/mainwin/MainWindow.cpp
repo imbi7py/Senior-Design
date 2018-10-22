@@ -304,7 +304,7 @@ void MainWindow::createMainMenu()
 	QMenu* optionsMenu = menuBar->addMenu(tr("&Options"));
 	optionsMenu->setObjectName(QStringLiteral("OptionsMenu"));
 	optionsMenu->addAction(actionManager()->getAction(ACTION_SETTINGS_DIALOG));
-
+	
 	// Build the help menu.
 	QMenu* helpMenu = menuBar->addMenu(tr("&Help"));
 	helpMenu->setObjectName(QStringLiteral("HelpMenu"));
@@ -319,6 +319,13 @@ void MainWindow::createMainMenu()
 #endif
 	helpMenu->addAction(actionManager()->getAction(ACTION_HELP_ABOUT));
 
+
+	// build the structure menu
+	QMenu* structureMenu = menuBar->addMenu(tr("&Structure Library"));
+	structureMenu->setObjectName(QStringLiteral("StructureLibrary"));
+	structureMenu->addAction(actionManager()->getAction(ACTION_LIBRARY_FILE_IMPORT));
+
+		
 	// Let GUI application services add their actions to the main menu.
 	for(const auto& service : StandaloneApplication::instance()->applicationServices()) {
 		if(auto gui_service = dynamic_object_cast<GuiApplicationService>(service))

@@ -43,11 +43,16 @@ namespace Ovito { OVITO_BEGIN_INLINE_NAMESPACE(Gui)
 #define ACTION_FILE_IMPORT		"FileImport"
 /// This action shows the remote file import dialog.
 #define ACTION_FILE_REMOTE_IMPORT "FileRemoteImport"
+
+//part of test button
+/// this action shows the import from library dialog
+#define ACTION_LIBRARY_FILE_IMPORT "LibraryFileImport"
+
+
 /// This action shows the file export dialog.
 #define ACTION_FILE_EXPORT		"FileExport"
 /// This action opens another main window.
 #define ACTION_FILE_NEW_WINDOW	"FileNewWindow"
-
 /// This action shows the about dialog.
 #define ACTION_HELP_ABOUT				"HelpAbout"
 /// This action shows the online help.
@@ -184,6 +189,7 @@ public:
 						const QString& statusTip = QString(),
 						const QKeySequence& shortcut = QKeySequence());
 
+
 private Q_SLOTS:
 
 	/// This is called when a new dataset has been loaded.
@@ -201,6 +207,7 @@ private Q_SLOTS:
 	void on_HelpShowOnlineHelp_triggered();
 	void on_FileNew_triggered();
 	void on_FileOpen_triggered();
+	void on_LibraryFileImport_triggered();
 	void on_FileSave_triggered();
 	void on_FileSaveAs_triggered();
 	void on_FileImport_triggered();
@@ -222,6 +229,41 @@ private Q_SLOTS:
 	void on_AnimationSettings_triggered();
 	void on_RenderActiveViewport_triggered();
 	void on_EditDelete_triggered();
+	void StructureMenu();
+  	void LoadA1B2();
+	void LoadBCC();
+  	void LoadCaB6();
+  	void LoadCu3Au();
+  	void LoadDiamond();
+  	void LoadFCC();
+  	void LoadNaCl();
+  	void LoadSC();
+  	void LoadZincBlende();
+	void loadMgSnCu();
+	void loadMgSnCu4();
+	void loadMgCu2();
+	void LoadCsCl();
+	void A1B2(int x, int y, int z, float numOfAtoms);
+	void BCC(int x, int y, int z, float numOfAtoms);
+	void CaB6(int x, int y, int z, float numOfAtoms);
+	void Cu3Au(int x, int y, int z, float numOfAtoms);
+	void Diamond(int x, int y, int z, float numOfAtoms);
+	void FCC(int x, int y, int z, float numOfAtoms);
+	void NaCl(int x, int y, int z, float numOfAtoms);
+	void SC(int x, int y, int z, float numOfAtoms);
+	void ZincBlende(int x, int y, int z, float numOfAtoms);
+	void MgSnCu4(int x, int y, int z, float numOfAtoms);
+	void MgCu2(int x, int y, int z, float numOfAtoms);
+	void CsCl(int x, int y, int z, float a);
+	void StructureConfirmed();
+	void cut(const QString &, float xc, float yc, float zc, float radius);
+	void changeRadius(const QString &);
+	void changeX(const QString &);
+	void changeY(const QString &);
+	void changeZ(const QString &);
+        void changeCutSphere(bool cut);
+	void changeNumOfAtoms(const QString & );
+
 
 private:
 
@@ -239,9 +281,8 @@ private:
 
 	/// The current dataset being edited in the main window.
 	OORef<DataSet> _dataset;
+
 };
 
 OVITO_END_INLINE_NAMESPACE
 }	// End of namespace
-
-
