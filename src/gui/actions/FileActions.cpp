@@ -283,10 +283,10 @@ void ActionManager::on_LibraryFileImport_triggered()
     connect(ZincBlendeButton, &QToolButton::clicked, &dlg, &QDialog::accept);
     connect(ZincBlendeButton, SIGNAL(clicked()), this, SLOT(LoadZincBlende()));
 
-		// Nick Added
+		// CsCl Button
 		QToolButton* csclButton = new QToolButton();
 		csclButton->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
-		csclButton->setIcon(QIcon( ":/gui/actions/file/BCC_icon.png"));
+		csclButton->setIcon(QIcon( ":/gui/actions/file/CsCl_icon.png"));
 		csclButton->setText("CsCl");
 		csclButton->setIconSize(QSize(100,100));
 		connect(csclButton, &QToolButton::clicked, &dlg, &QDialog::accept);
@@ -295,7 +295,6 @@ void ActionManager::on_LibraryFileImport_triggered()
     list1->addWidget(bccButton);
     list1->addWidget(CaB6Button);
     list1->addWidget(ZincBlendeButton);
-		// Nick Added
 		list1->addWidget(csclButton);
 
     QToolButton* Cu3AuButton = new QToolButton();
@@ -326,6 +325,13 @@ void ActionManager::on_LibraryFileImport_triggered()
     list2->addWidget(Cu3AuButton);
     list2->addWidget(DiamondButton);
     list2->addWidget(FCCButton);
+		// add empty widget for spacing
+		QToolButton* spaceButton2 = new QToolButton();
+		spaceButton2->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
+		spaceButton2->setIcon(QIcon( ":/gui/actions/file/FCC_icon.png"));
+		spaceButton2->setText("Space2");
+		spaceButton2->setIconSize(QSize(100,100));
+		list2->addWidget(spaceButton2);
 
     QToolButton* NaClButton = new QToolButton();
     NaClButton->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
@@ -355,6 +361,13 @@ void ActionManager::on_LibraryFileImport_triggered()
     list3->addWidget(NaClButton);
     list3->addWidget(SCButton);
     list3->addWidget(MgSnCuButton);
+		// add empty widget for spacing
+		QToolButton* spaceButton3 = new QToolButton();
+		spaceButton3->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
+		spaceButton3->setIcon(QIcon( ":/gui/actions/file/FCC_icon.png"));
+		spaceButton3->setText("Space3");
+		spaceButton3->setIconSize(QSize(100,100));
+		list3->addWidget(spaceButton3);
 
     QHBoxLayout *MainLayout = new QHBoxLayout(&dlg);
     MainLayout->addLayout(list1);
